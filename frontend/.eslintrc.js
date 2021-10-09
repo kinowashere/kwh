@@ -18,5 +18,10 @@ module.exports = {
     'react',
   ],
   rules: {
+    'react/react-in-jsx-scope': 'off',
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    'import/no-unresolved': 'off',
+    'import/no-extraneous-dependencies': 'off',
+    'no-param-reassign': 'off',
   },
 };

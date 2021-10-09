@@ -1,0 +1,9 @@
+.App {
+  &__Title {
+    color: $foreground;
+  }
+
+  &__Wrapper {
+    background-color: $background;
+  }
+}
