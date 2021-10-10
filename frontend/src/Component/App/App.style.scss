@@ -1,9 +1,8 @@
 .App {
-  &__Title {
-    color: $foreground;
-  }
-
-  &__Wrapper {
-    background-color: $background;
+  &__Container {
+      width: 900px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
   }
 }
