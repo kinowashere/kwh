@@ -1,0 +1,19 @@
+{
+    "name": "kwh/jwt",
+    "description": "Simple JWT implementation",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Kwh\\Jwt\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Manuel Trinidad",
+            "email": "manuel.trinidad.mo@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
