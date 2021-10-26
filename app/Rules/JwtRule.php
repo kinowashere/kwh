@@ -3,9 +3,9 @@
 namespace App\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
-use Kwh\Jwt\Jwt as JwtUtil;
+use Kwh\Jwt\Jwt;
 
-class Jwt implements Rule
+class JwtRule implements Rule
 {
     /**
      * Create a new rule instance.
@@ -24,9 +24,10 @@ class Jwt implements Rule
      * @param  mixed  $value
      * @return bool
      */
-    public function passes($attribute, $value)
+    public function passes($attribute, $value): bool
     {
-
+        $jwt = new Jwt(env('JWT_PRIVATE_KEY'));
+        return $jwt->isTokenValid($value);
     }
 
     /**
@@ -34,8 +35,8 @@ class Jwt implements Rule
      *
      * @return string
      */
-    public function message()
+    public function message(): string
     {
-        return 'The validation error message.';
+        return 'JWT is not valid.';
     }
 }

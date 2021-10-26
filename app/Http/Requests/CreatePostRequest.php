@@ -11,9 +11,9 @@ class CreatePostRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,10 +21,14 @@ class CreatePostRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    public function rules(): array
     {
         return [
-            //
+            'title' => ['required', 'string', 'max:250'],
+            'content' => ['required', 'string', 'max:10000'],
+            'date_published' => ['required', 'date'],
+            'is_draft' => ['required', 'boolean'],
+            'is_public' => ['required', 'boolean']
         ];
     }
 }

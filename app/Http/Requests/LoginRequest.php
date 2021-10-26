@@ -11,20 +11,22 @@ class LoginRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
      * Get the validation rules that apply to the request.
+     * This will only validate the data, not authenticate the user!
      *
      * @return array
      */
-    public function rules()
+    public function rules(): array
     {
         return [
-            //
+            'handle' => ['required', 'string', 'exists:users,handle'],
+            'password' => ['required', 'string']
         ];
     }
 }

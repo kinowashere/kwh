@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Post;
+use App\Models\Role;
 use App\Models\User;
 use Faker\Factory;
 use Illuminate\Database\Seeder;
@@ -17,25 +18,25 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Post::truncate();
-        User::truncate();
         $faker = Factory::create();
 
-        for ($i = 0; $i < 30; $i++) {
+        for ($i = 0; $i < 2; $i++) {
             Post::create([
                 'title' => $faker->sentence,
                 'content' => $faker->paragraphs(3, true),
-                'is_draft' => $faker->boolean,
-                'is_public' => $faker->boolean,
+                'is_draft' => false,
+                'is_public' => true,
                 'date_published' => $faker->date
             ]);
         }
 
-        User::create([
+        $user = User::create([
             'name' => 'Manuel Trinidad',
-            'handle' => 'KiNO',
-            'password' => Hash::make('password'),
-            'email' => 'matrinu@pm.me'
+            'handle' => "kino",
+            'password' => Hash::make('1111'),
+            'email' => 'manuel@me.test'
         ]);
+
+        $user->roles()->attach('admin');
     }
 }

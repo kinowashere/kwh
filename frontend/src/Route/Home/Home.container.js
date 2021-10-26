@@ -1,6 +1,5 @@
 import { PureComponent } from 'react';
 import ApiRequest from 'Util/ApiRequest';
-import { toast } from 'react-toastify';
 import Home from './Home.component';
 
 export class HomeContainer extends PureComponent {
@@ -22,7 +21,6 @@ export class HomeContainer extends PureComponent {
           status
         } = response;
         if (status !== 200) {
-          toast('No blog posts yet... :(');
           return;
         }
         this.setState({ posts });

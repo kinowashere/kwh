@@ -1,18 +1,34 @@
 import { PureComponent } from 'react';
-import PropTypes from 'prop-types';
+import { stringify } from 'rebem-classname';
+import { Link, NavLink } from 'react-router-dom';
 
 export class Header extends PureComponent {
-  static propTypes = {
-    content: PropTypes.string.isRequired,
-    onClick: PropTypes.func.isRequired,
-  };
-
   render() {
-    const { content, onClick } = this.props;
     return (
-      <button type="submit" onClick={ onClick }>
-        { content }
-      </button>
+      <header
+        className={ stringify({
+          block: 'Header',
+          elem: 'Container'
+        }) }
+      >
+        <Link
+          to="/"
+          className={ stringify({
+            block: 'Header',
+            elem: 'Title'
+          }) }
+        >
+          KiNO WAS HERE
+        </Link>
+        <span
+          className={ stringify({
+            block: 'Header',
+            elem: 'LinksContainer'
+          }) }
+        >
+          <NavLink to="/blog">Blog</NavLink>
+        </span>
+      </header>
     );
   }
 }

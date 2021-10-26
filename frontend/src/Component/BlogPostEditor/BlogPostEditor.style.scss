@@ -1,0 +1,40 @@
+.BlogPostEditor {
+    &__FormContainer {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        label {
+            width: 100%;
+
+            textarea {
+                width: calc(100% - 32px);
+                height: 300px;
+            }
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            margin-left: 16px;
+
+            label {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 16px;
+            }
+
+            button {
+                margin-bottom: 16px;
+            }
+        }
+    }
+
+    &__CheckboxLabel {
+        flex-direction: row !important;
+
+        input {
+            margin-left: 16px;
+        }
+    }
+}

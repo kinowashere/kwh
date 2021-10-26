@@ -11,6 +11,11 @@ export class Home extends PureComponent {
 
   renderBlogPosts() {
     const { posts } = this.props;
+
+    if (posts.length === 0) {
+      return null;
+    }
+
     return (
       <>
         <h2>Recent Blog Posts</h2>

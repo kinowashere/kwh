@@ -16,4 +16,9 @@ class Post extends Model
     use HasFactory;
 
     protected $hidden = ['created_at', 'updated_at', 'is_draft', 'is_public'];
+    protected $casts = [
+        'is_draft' => 'boolean',
+        'is_public' => 'boolean'
+    ];
+    protected $fillable = ['title', 'content', 'date_published', 'is_draft', 'is_public'];
 }

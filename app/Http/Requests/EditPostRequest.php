@@ -13,7 +13,7 @@ class EditPostRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,12 @@ class EditPostRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'id' => ['required', 'integer', 'exists:posts'],
+            'title' => ['required', 'string', 'max:250'],
+            'content' => ['required', 'string', 'max:10000'],
+            'date_published' => ['required', 'date'],
+            'is_draft' => ['required', 'boolean'],
+            'is_public' => ['required', 'boolean']
         ];
     }
 }

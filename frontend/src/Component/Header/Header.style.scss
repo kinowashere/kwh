@@ -1,3 +1,15 @@
 .Header {
+    &__Container {
+        padding: 16px 0;
+        display: flex;
+        justify-content: space-between;
+    }
 
+    &__Title {
+        @include header-title
+    }
+
+    &__LinksContainer {
+
+    }
 }

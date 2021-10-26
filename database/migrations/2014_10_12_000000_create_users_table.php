@@ -17,7 +17,6 @@ class CreateUsersTable extends Migration
             $table->engine = 'InnoDB';
             $table->charset = 'utf8mb4';
             $table->collation = 'utf8mb4_unicode_ci';
-            $table->id();
             $table->string('name');
             $table->string('handle', 50)->unique();
             $table->string('email')->unique();
@@ -25,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->primary('handle');
         });
     }
 

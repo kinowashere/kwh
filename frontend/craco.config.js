@@ -8,6 +8,7 @@ module.exports = {
         resources: [
           './src/Style/Main.scss',
           './src/Component/**/*.scss',
+          './src/Route/**/*.scss'
         ],
       },
     },
