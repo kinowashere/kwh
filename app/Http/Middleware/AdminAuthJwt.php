@@ -22,7 +22,7 @@ class AdminAuthJwt
          * If no token is present
          */
         if (!$request->bearerToken()) {
-            return response()->json(['error' => 'Unauthorized'], status: 401);
+            return response()->json(['error' => 'Authorization token is not present'], status: 401);
         }
 
         /**
@@ -30,7 +30,7 @@ class AdminAuthJwt
          */
         $jwt = new Jwt(env('JWT_PRIVATE_KEY'));
         if (!$jwt->isTokenValid($request->bearerToken())) {
-            return response()->json(['error' => 'Unauthorized'], status: 401);
+            return response()->json(['error' => 'Token is not valid'], status: 401);
         }
 
         /**
@@ -48,7 +48,7 @@ class AdminAuthJwt
          */
 
         if (!$user->roles->contains('role', value: 'admin')) {
-            return false;
+            return response()->json(['error' => 'Not Admin'], status: 401);
         }
 
         return $next($request);
