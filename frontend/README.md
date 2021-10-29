@@ -11,7 +11,7 @@
 - [x] Handle request 404's and all that jazz
 - [ ] Someday, sometime, when my brain is 10x bigger, send all app state to Redux
 - [ ] Handle user groups
-- [ ] Support for the mobile people
+- [x] Support for the mobile people
 - [ ] Parse API formats to code (parse types to camelcase)
 - [ ] Implement Loaders
 - [x] Fix Home design

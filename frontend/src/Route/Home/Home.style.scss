@@ -14,14 +14,25 @@
 
     &__AboutMeContainer {
         display: flex;
+        flex-direction: column-reverse;
         width: max-content;
-        margin: 32px auto;
+        align-self: center;
+        margin-bottom: 32px;
+
+        @include desktop {
+            flex-direction: row;
+            margin: 32px auto;
+        }
     }
 
     &__AboutMeInfoContainer {
         display: flex;
         flex-direction: column;
-        margin-left: 32px;
+        margin-bottom: 32px;
+
+        @include desktop {
+            margin-left: 32px;
+        }
 
         span {
             font-size: 18px;
@@ -45,5 +56,10 @@
     &__PostsContainer {
         display: flex;
         justify-content: space-between;
+        flex-direction: column;
+
+        @include desktop {
+            flex-direction: row;
+        }
     }
 }
