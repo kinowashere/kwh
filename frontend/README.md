@@ -14,7 +14,7 @@
 - [ ] Support for the mobile people
 - [ ] Parse API formats to code (parse types to camelcase)
 - [ ] Implement Loaders
-- [ ] Fix Home design
+- [x] Fix Home design
 - [ ] Make JWT Auth work with Admin Auth Middleware
 - [ ] Remove all Laravel Auth and make an API Index
 

@@ -14,13 +14,28 @@
 
     &__AboutMeContainer {
         display: flex;
-        margin-bottom: 32px;
+        width: max-content;
+        margin: 32px auto;
     }
 
     &__AboutMeInfoContainer {
         display: flex;
         flex-direction: column;
         margin-left: 32px;
+
+        span {
+            font-size: 18px;
+
+            a {
+                font-size: inherit;
+                text-decoration: 2px underline;
+                font-weight: bold;
+
+                &:hover {
+                    opacity: 90%;
+                }
+            }
+        }
 
         h1 {
             margin-bottom: 16px;

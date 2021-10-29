@@ -50,9 +50,18 @@ export class Home extends PureComponent {
           }) }
         >
           <h1>Manuel Trinidad</h1>
-          <a href="https://github.com/kinowashere">{ '> GitHub | kinowashere' }</a>
-          <a href="https://www.linkedin.com/in/matrin/">{ '> LinkedIn | matrin' }</a>
-          <a href="https://www.flickr.com/photos/155618053@N02/albums">{ '> Flickr | manueltrinidad' }</a>
+          <span>
+            { 'GitHub > ' }
+            <a href="https://github.com/kinowashere">kinowashere</a>
+          </span>
+          <span>
+            { 'LinkedIn > ' }
+            <a href="https://www.linkedin.com/in/matrin/">matrin</a>
+          </span>
+          <span>
+            { 'Flickr > ' }
+            <a href="https://www.flickr.com/photos/155618053@N02/albums">manueltrinidad</a>
+          </span>
         </div>
       </div>
     );
