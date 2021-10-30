@@ -15,8 +15,13 @@ class LoginController extends Controller
     {
         $validated = $request->validated();
         $user = User::find($validated['handle']);
+
         if (!Hash::check($validated['password'], $user->password)) {
             return response()->json(['error' => 'Invalid password'], status: 401);
+        }
+
+        if (!$user->roles->contains('role', value: 'admin')) {
+            return response()->json(['error' => 'Not Admin'], status: 401);
         }
 
         $jwt = new Jwt(env('JWT_PRIVATE_KEY'));
