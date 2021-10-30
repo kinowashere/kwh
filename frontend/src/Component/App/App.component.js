@@ -6,6 +6,7 @@ import Header from 'Component/Header';
 import Admin from 'Route/Admin';
 import Blog from 'Route/Blog';
 import BlogPost from 'Route/BlogPost';
+import Cv from 'Route/Cv';
 import Home from 'Route/Home';
 import NoMatch from 'Route/NoMatch';
 import PropTypes from 'prop-types';
@@ -39,6 +40,10 @@ export class App extends PureComponent {
         <Route
           path="/blog/:id?"
           component={ (props) => <BlogPost { ...this.props } { ...props } /> }
+        />
+        <Route
+          path="/cv"
+          component={ () => <Cv { ...this.props } /> }
         />
         <Route
           path="/admin"

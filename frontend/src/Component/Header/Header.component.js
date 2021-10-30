@@ -26,6 +26,7 @@ export class Header extends PureComponent {
             elem: 'LinksContainer'
           }) }
         >
+          <NavLink to="/cv">CV</NavLink>
           <NavLink to="/blog">Blog</NavLink>
         </span>
       </header>

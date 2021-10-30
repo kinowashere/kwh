@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { blogPostType } from 'Type/Blog';
 import BlogPostCard from 'Component/BlogPostCard';
 import { stringify } from 'rebem-classname';
+import winkingShibe from 'Assets/Home/winkingShibe.gif';
 
 export class Home extends PureComponent {
   static propTypes = {
@@ -40,7 +41,7 @@ export class Home extends PureComponent {
         }) }
       >
         <img
-          src="https://media.tenor.com/images/9ce092207d888099f3544cf6f9812b36/tenor.gif"
+          src={ winkingShibe }
           alt="Wink Wink"
         />
         <div

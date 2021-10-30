@@ -3,6 +3,7 @@
         padding: 16px 0;
         display: flex;
         justify-content: space-between;
+
     }
 
     &__Title {
@@ -10,6 +11,8 @@
     }
 
     &__LinksContainer {
-
+        a {
+            margin-left: 16px;
+        }
     }
 }
