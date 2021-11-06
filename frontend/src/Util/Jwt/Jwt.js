@@ -12,6 +12,11 @@ export class Jwt {
     const signature = jwtArray[2];
     return new Jwt(header, payload, signature);
   }
+
+  isTokenValid() {
+    const { exp } = this.payload;
+    return exp >= Math.floor(Date.now() / 1000);
+  }
 }
 
 export default Jwt;

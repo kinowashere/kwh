@@ -5,7 +5,7 @@ import App from './App.component';
 
 export class AppContainer extends PureComponent {
   state = {
-    isUserSignedIn: isSignedIn(),
+    isUserSignedIn: false,
   };
 
   containerFunctions = {
@@ -14,6 +14,7 @@ export class AppContainer extends PureComponent {
 
   componentDidMount() {
     document.title = APP_NAME;
+    this.setState({ isUserSignedIn: isSignedIn() });
   }
 
   handleUserSignIn(token) {

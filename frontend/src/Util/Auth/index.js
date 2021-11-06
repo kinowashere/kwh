@@ -1,9 +1,15 @@
 import SessionStorage from 'Util/SessionStorage';
 import ApiRequest from 'Util/ApiRequest';
 import Security from 'Util/Security';
+import Jwt from 'Util/Jwt';
 
-// TODO: Perform session check!!!
-export const isSessionValid = () => true;
+export const isSessionValid = () => {
+  const token = SessionStorage.getItem('token');
+  if (token) {
+    return Jwt.getJwtFromToken(token).isTokenValid();
+  }
+  return false;
+};
 
 // eslint-disable-next-line arrow-body-style
 export const isSignedIn = () => {
