@@ -1,5 +1,6 @@
 import { PureComponent } from 'react';
 import ApiRequest from 'Util/ApiRequest';
+import { toBlogPostType } from 'Serializer/Blog';
 import Home from './Home.component';
 
 export class HomeContainer extends PureComponent {
@@ -23,7 +24,8 @@ export class HomeContainer extends PureComponent {
         if (status !== 200) {
           return;
         }
-        this.setState({ posts });
+        const serializedPosts = posts.map((post) => toBlogPostType(post));
+        this.setState({ posts: serializedPosts });
       });
   }
 

@@ -13,7 +13,7 @@ export class BlogPostVisualizer extends PureComponent {
       post: {
         title,
         content,
-        date_published: datePublished
+        datePublished
       }
     } = this.props;
     return (

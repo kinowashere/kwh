@@ -2,6 +2,7 @@ import { PureComponent } from 'react';
 import { matchType } from 'Type/Router';
 import ApiRequest from 'Util/ApiRequest';
 import PropTypes from 'prop-types';
+import { toBlogPostType } from 'Serializer/Blog';
 import BlogPost from './BlogPost.component';
 
 export class BlogPostContainer extends PureComponent {
@@ -36,7 +37,8 @@ export class BlogPostContainer extends PureComponent {
         const { history } = this.props;
 
         if (status === 200) {
-          this.setState({ post });
+          const serializedPost = toBlogPostType(post);
+          this.setState({ post: serializedPost });
         } else {
           history.push('/404');
         }

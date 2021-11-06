@@ -14,7 +14,7 @@ export class BlogPostCard extends PureComponent {
         id,
         title,
         content,
-        date_published: datePublished
+        datePublished
       }
     } = this.props;
     return (

@@ -26,7 +26,7 @@ Everything in the FE is in the `./frontend` directory. Proceed with it as a stan
 - [ ] Someday, sometime, when my brain is 10x bigger, send all app state to Redux
 - [ ] Handle user groups
 - [x] Support for the mobile people
-- [ ] Parse API formats to code (parse types to camelcase)
+- [x] Parse API formats to code (parse types to camelcase)
 - [ ] Implement Loaders
 - [x] Fix Home design
 - [ ] Make JWT Auth work with Admin Auth Middleware

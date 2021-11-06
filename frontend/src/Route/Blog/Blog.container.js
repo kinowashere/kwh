@@ -1,6 +1,7 @@
 import { PureComponent } from 'react';
 import ApiRequest from 'Util/ApiRequest';
 import { toast } from 'react-toastify';
+import { toBlogPostType } from 'Serializer/Blog';
 import Blog from './Blog.component';
 
 export class BlogContainer extends PureComponent {
@@ -49,8 +50,9 @@ export class BlogContainer extends PureComponent {
           toast('No blog posts yet... :(');
           return;
         }
+        const serializedPosts = posts.map((post) => toBlogPostType(post));
         this.setState({
-          posts, currentPage, isNextPage, isPrevPage
+          posts: serializedPosts, currentPage, isNextPage, isPrevPage
         });
       }
     );

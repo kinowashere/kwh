@@ -33,9 +33,9 @@ export class BlogPostEditor extends PureComponent {
         id,
         title,
         content,
-        date_published: datePublished,
-        is_draft: isDraft,
-        is_public: isPublic
+        datePublished,
+        isDraft,
+        isPublic
       },
       handleOnChange
     } = this.props;
@@ -74,7 +74,7 @@ export class BlogPostEditor extends PureComponent {
             Date Published
             <input
               type="date"
-              name="date_published"
+              name="datePublished"
               id="datePublished"
               value={ datePublished }
               onChange={ (e) => handleOnChange(e) }
@@ -85,7 +85,7 @@ export class BlogPostEditor extends PureComponent {
             Is Draft?
             <input
               type="checkbox"
-              name="is_draft"
+              name="isDraft"
               id="isDraft"
               checked={ isDraft }
               onChange={ (e) => handleOnChange(e) }
@@ -95,7 +95,7 @@ export class BlogPostEditor extends PureComponent {
             Is Public?
             <input
               type="checkbox"
-              name="is_public"
+              name="isPublic"
               id="isPublic"
               checked={ isPublic }
               onChange={ (e) => handleOnChange(e) }

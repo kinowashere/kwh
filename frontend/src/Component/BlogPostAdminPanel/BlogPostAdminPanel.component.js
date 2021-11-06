@@ -27,10 +27,10 @@ export class BlogPostAdminPanel extends PureComponent {
         { allPosts.map((post) => {
           const {
             title,
-            date_published: datePublished,
+            datePublished,
             id,
-            is_public: isPublic,
-            is_draft: isDraft
+            isPublic,
+            isDraft
           } = post;
           return (
             <button

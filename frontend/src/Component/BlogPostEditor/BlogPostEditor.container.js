@@ -19,9 +19,9 @@ export class BlogPostEditorContainer extends PureComponent {
       id: 0,
       title: 'Lorem...',
       content: 'Lorem ipsum...',
-      date_published: new Date().toISOString().split('T')[0],
-      is_draft: false,
-      is_public: true
+      datePublished: new Date().toISOString().split('T')[0],
+      isDraft: false,
+      isPublic: true
     },
     mode: 'newPost'
   };
@@ -83,9 +83,9 @@ export class BlogPostEditorContainer extends PureComponent {
       post: {
         title,
         content,
-        date_published: datePublished,
-        is_draft: isDraft,
-        is_public: isPublic
+        datePublished,
+        isDraft,
+        isPublic
       }
     } = this.state;
     e.preventDefault();
@@ -115,9 +115,9 @@ export class BlogPostEditorContainer extends PureComponent {
         id,
         title,
         content,
-        date_published: datePublished,
-        is_draft: isDraft,
-        is_public: isPublic
+        datePublished,
+        isDraft,
+        isPublic
       }
     } = this.state;
     e.preventDefault();

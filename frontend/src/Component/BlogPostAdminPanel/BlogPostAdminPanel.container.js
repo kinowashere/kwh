@@ -1,6 +1,7 @@
 import { PureComponent } from 'react';
 import ApiRequest from 'Util/ApiRequest';
 import { toast } from 'react-toastify';
+import { toBlogPostWithDetailsType } from 'Serializer/Blog';
 import BlogPostAdminPanel from './BlogPostAdminPanel.component';
 
 export class BlogPostAdminPanelContainer extends PureComponent {
@@ -40,7 +41,8 @@ export class BlogPostAdminPanelContainer extends PureComponent {
         const { status, data: allPosts } = response;
         if (status === 200) {
           const sortedPosts = this.sortPostsByDate(allPosts);
-          this.setState({ allPosts: sortedPosts });
+          const serializedPosts = sortedPosts.map((post) => toBlogPostWithDetailsType(post));
+          this.setState({ allPosts: serializedPosts });
         } else {
           toast('There was a problem retrieving all posts...');
         }
