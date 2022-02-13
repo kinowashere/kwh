@@ -129,7 +129,12 @@ export class Cv extends PureComponent {
         <h2>Career Experience</h2>
         <div>
           <h3>Developer</h3>
-          <span>Scandiweb | 2021 - present</span>
+          <span>Outvio | 2022 - present</span>
+          <p>Develop FE using React-based tools</p>
+        </div>
+        <div>
+          <h3>Developer</h3>
+          <span>Scandiweb | 2021 - 2022</span>
           <p>Develop Magento 2 BE and FE using React, Node and Docker-based tools.</p>
         </div>
         <div>
