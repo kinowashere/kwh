@@ -209,7 +209,9 @@ const Cv: FunctionComponent<PageProps> = ({ route }) => {
               Manuel Trinidad Morales
             </span>
             <span className={tw`text-2xl font-light`}>Software Engineer</span>
-            <a className={tw`font-mono text-sm`}>📄 [PDF] Download</a>
+            <a className={tw`font-mono text-sm`} href="/CV.pdf">
+              📄 [PDF] Download
+            </a>
           </div>
         </div>
         <div className={tw`grid justify-center md:grid-cols-2 md:flex-row`}>
