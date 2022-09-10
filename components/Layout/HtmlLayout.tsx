@@ -1,7 +1,4 @@
-/** @jsx h */
-/** @jsxFrag Fragment */
-import { tw } from "@twind";
-import { Fragment, FunctionComponent, h } from "preact";
+import { Fragment, FunctionComponent } from "preact";
 import { Head } from "$fresh/runtime.ts";
 import { DARK_THEME } from "@utils/themes.ts";
 
@@ -29,8 +26,7 @@ const HtmlLayout: FunctionComponent<IHtmlLayout> = (props) => {
         </link>
       </Head>
       <body
-        className={tw
-          `transition-color duration-100 bg-bgPrimary text-textPrimary`}
+        className="transition-color duration-100 bg-bgPrimary text-textPrimary"
         style={DARK_THEME}
       >
         {children}
