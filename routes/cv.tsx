@@ -2,14 +2,18 @@ import { FunctionComponent } from "preact";
 import BaseLayout from "@components/Layout/BaseLayout.tsx";
 import { PageProps } from "$fresh/server.ts";
 
-const techs: { title: string; sub: string[] }[] = [
-  {
-    title: "PHP",
-    sub: ["Laravel", "Magento 2"],
-  },
+const techs: { title: string; sub: string[]; extra?: string[] }[] = [
   {
     title: "JS / TS",
     sub: ["React"],
+    extra: [
+      "⚡redux | tailwind  | Gatsby | react-query",
+      "📖rollup component library setup from 0",
+    ],
+  },
+  {
+    title: "PHP",
+    sub: ["Laravel", "Magento 2"],
   },
   {
     title: "Python",
@@ -110,15 +114,21 @@ const Cv: FunctionComponent<PageProps> = ({ route }) => {
       <div>
         <h2 className={moduleTitle}>Technologies</h2>
         <div className="text-xl flex flex-col space-y-2">
-          {techs.map(({ title, sub }) => (
-            <div className="flex space-x-4 text-xl">
-              <span className="font-bold">{title}</span>
-              <span>{sub.join(", ")}</span>
-            </div>
+          {techs.map(({ title, sub, extra }) => (
+            <>
+              <div className="flex space-x-4 text-xl">
+                <span className="font-bold">{title}</span>
+                <span>{sub.join(", ")}</span>
+              </div>
+              {extra &&
+                extra.map((item) => (
+                  <span className="font-bold text-sm">{item}</span>
+                ))}
+            </>
           ))}
         </div>
         <div className="font-bold mt-6 text-2xl">
-          Ansible - Docker - SQL - Linux
+          Docker - Mongo - SQL - Linux
         </div>
       </div>
     );
