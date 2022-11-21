@@ -36,15 +36,21 @@ const jobs: {
   description: string;
 }[] = [
   {
-    title: "Developer",
+    title: "Software Engineer",
+    company: "Yolo",
+    time: "Nov 2022 - Present",
+    description: "Develop FE and BE using TS",
+  },
+  {
+    title: "Frontend Developer",
     company: "Outvio",
-    time: "2022 - Present",
+    time: "Feb 2022 - Nov 2022",
     description: "Develop FE using React-based tools",
   },
   {
-    title: "Developer",
+    title: "Junior Developer",
     company: "Scandiweb",
-    time: "2021 - 2022",
+    time: "Mar 2021 - Feb 2022",
     description:
       "Develop Magento 2 BE and FE using React, Node and Docker-based tools",
   },
@@ -127,9 +133,6 @@ const Cv: FunctionComponent<PageProps> = ({ route }) => {
             </>
           ))}
         </div>
-        <div className="font-bold mt-6 text-2xl">
-          Docker - Mongo - SQL - Linux
-        </div>
       </div>
     );
   }
@@ -177,16 +180,11 @@ const Cv: FunctionComponent<PageProps> = ({ route }) => {
     return (
       <div>
         <h2 className={moduleTitle}>Languages</h2>
-        <div className="text-xl flex flex-col md:flex-row md:justify-between space-y-6 md:space-y-0 md:space-x-4">
-          {languages.map(({ language, extra, level, flag }) => (
-            <div className="flex flex-col space-y-1">
-              <div className="flex space-x-4 text-xl">
-                <span>{flag}</span>
-                <span className="font-bold">{language}</span>
-              </div>
-              <span>{level}</span>
-              {extra && <span>{extra}</span>}
-            </div>
+        <div className="text-xl flex space-x-4">
+          {languages.map(({ flag }) => (
+            <span>
+              {flag}
+            </span>
           ))}
         </div>
       </div>
@@ -256,6 +254,7 @@ const Cv: FunctionComponent<PageProps> = ({ route }) => {
               </div>
             </div>
             {renderTechnologies()}
+            {renderLanguages()}
             <div className="flex flex-col text-xl">
               <span>
                 This website was built on{" "}
@@ -275,7 +274,6 @@ const Cv: FunctionComponent<PageProps> = ({ route }) => {
           <div className="flex flex-col space-y-6 md:pr-4">
             {renderJobs()}
             {renderEducation()}
-            {renderLanguages()}
           </div>
         </div>
       </div>
